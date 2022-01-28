@@ -4,7 +4,7 @@ const app=require("express")()
 const bodyparser=require("body-parser")
 app.use(bodyparser.json())
 //querydata params
-const loggerMw=(req,res,next)=>{
+/*const loggerMw=(req,res,next)=>{
     console.log(req.method)
     console.log(req.url)
     console.log(new Date().toDateString())
@@ -15,7 +15,7 @@ app.get("/home/products",(req,res)=>{
     const querydata=req.query
     if(querydata.prname){
         res.send("products fetched")
-    }*/
+    }
     res.send("products")
 })
 app.get("/home",loggerMw,(req,res)=>{
@@ -44,4 +44,4 @@ app.all("*",(req,res)=>{
 })
 app.listen(3001,()=>{
     console.log("server started")
-})
+})*/
