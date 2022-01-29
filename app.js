@@ -5,6 +5,8 @@ app.use(bodyparser.json())
 app.use("/",SampleRoutes)*/
 const signup=require("./routes/createUser")
 const findAll=require("./routes/findUser")
+const update=require("./routes/updateUser")
 app.use("/",signup)
 app.use("/",findAll)
+app.use("/",update)
 app.listen(3001,()=>console.log("server started"))

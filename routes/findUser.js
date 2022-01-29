@@ -3,7 +3,7 @@ const router=express.Router()
 const logger=require("../middleware/logger")
 const User=require("../models/userModel")
 router.get("/findall",async (req,res)=>{
-   const result= await User.find()
+   const result= await User.findOne({email:"test@gmail.com"})
    console.log(result)
    res.send(result)
 })
