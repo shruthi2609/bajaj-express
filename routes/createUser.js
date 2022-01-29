@@ -2,8 +2,9 @@ const express=require("express")
 const router=express.Router()
 const logger=require("../middleware/logger")
 const User=require("../models/userModel")
-router.post("/signup",logger,(req,res)=>{
+router.post("/signup",logger,async (req,res)=>{
 const data=req.body
+try{
 const user1=new User(
     {
         email:data.email,
@@ -15,13 +16,18 @@ const user1=new User(
         country:data.country,
     }
 )
-user1.save( (err,data)=>{
+await user1.save().then(()=>res.send("user added"))
+}
+catch(err){
+res.send(err)
+}
+/*user1.save( (err,data)=>{
 if(err){
   res.send(err)
 }
 else{
     res.send("user added successfully")
 }
-})
+})*/
 })
 module.exports=router
