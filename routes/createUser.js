@@ -11,11 +11,17 @@ const user1=new User(
         mobile:data.mobile,
         area:data.area,
         pincode:data.pincode,
-       
         address:data.area+data.pincode+data.country,
         country:data.country,
     }
 )
-user1.save().then(()=>res.send("user added successfully"))
+user1.save( (err,data)=>{
+if(err){
+  res.send(err)
+}
+else{
+    res.send("user added successfully")
+}
+})
 })
 module.exports=router
