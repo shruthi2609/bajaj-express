@@ -4,5 +4,7 @@ app.use(bodyparser.json())
 /*const SampleRoutes=require("./routes/sample")
 app.use("/",SampleRoutes)*/
 const signup=require("./routes/createUser")
+const findAll=require("./routes/findUser")
 app.use("/",signup)
+app.use("/",findAll)
 app.listen(3001,()=>console.log("server started"))
