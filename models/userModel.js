@@ -21,7 +21,6 @@ const User=mongoose.model("Customer",{
    },
    country:{
        type:String,
-       default:"IND",
        required:true
    },
    area:String,
