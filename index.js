@@ -1,8 +1,9 @@
-//1.render html pages from express
-// 2. write logger to a file
+
 const app=require("express")()
+
 const bodyparser=require("body-parser")
 app.use(bodyparser.json())
+
 //querydata params
 /*const loggerMw=(req,res,next)=>{
     console.log(req.method)
