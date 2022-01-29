@@ -17,7 +17,7 @@ router.post("/signin",async (req,res)=>{
     else{
         res.send("Incorrect Password")
     }
-    res.send("fetched")
+  
 }
 catch(err){
     res.send(err)
