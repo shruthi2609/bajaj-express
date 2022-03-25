@@ -19,7 +19,7 @@ app.get("/home/products",(req,res)=>{
     }
     res.send("products")
 })
-app.get("/home",loggerMw,(req,res)=>{
+app.get("/home",(req,res)=>{
     res.status(200).send("home")
 })
 app.get("/product/:prname/:price",(req,res)=>{
@@ -42,7 +42,10 @@ app.post("/updatepassword",loggerMw,(req,res)=>{
 })
 app.all("*",(req,res)=>{
     res.status(404).send("File not Found 404 ")
+})*/
+app.get("/home",(req,res)=>{
+    res.status(200).send("<h1>Home</h1>")
 })
 app.listen(3001,()=>{
     console.log("server started")
-})*/
+})
